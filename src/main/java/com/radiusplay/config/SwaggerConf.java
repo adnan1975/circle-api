@@ -19,19 +19,18 @@ public class SwaggerConf {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
-
+                .apis(RequestHandlerSelectors.basePackage("com.radiusplay"))
+              //  .paths(PathSelectors.any())
                 .build().apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "My REST API",
-                "Some custom description of API.",
-                "API TOS",
+                "Circle API",
+                "Api for managing and using Radiusplay Circles ",
+                "1.0",
                 "Terms of service",
-                new Contact("John Doe", "www.example.com", "myeaddress@company.com"),
-                "License of API", "API license URL", Collections.emptyList());
+                new Contact("Adnna Rana", "www.radiusplay.com", "api@radiusplay.com"),
+                "No License", "API license URL", Collections.emptyList());
     }
 }
