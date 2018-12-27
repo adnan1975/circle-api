@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+@Table(name = "organizations")
+
 public class Organization  extends AuditModel{
 
     @NotNull

@@ -20,6 +20,6 @@ public class Circle extends AuditModel{
 
     private List<Member> members;
 
-    @Column(unique = true)
+    @Column
     private Long maintainer;
 }
