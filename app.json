@@ -1,0 +1,7 @@
+{
+  "name": "Circle API Java",
+  "description": "Api for Circles ",
+  "addons": [
+    "heroku-postgresql"
+  ]
+}

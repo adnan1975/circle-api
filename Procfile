@@ -1,0 +1,1 @@
+web: java -jar target/rp-circle-api-1.0.jar
