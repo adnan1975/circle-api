@@ -25,6 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -42,44 +43,13 @@ import java.util.Map;
 public class CircleApiApp {
 
 
-    @Autowired
-    private DataSource dataSource;
+
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(CircleApiApp.class, args);
     }
 
-    @RequestMapping("/")
-    String index() {
-        return "index";
-    }
 
-    @RequestMapping("/db")
-    String db(Map<String, Object> model) {
-        try (Connection connection = dataSource.getConnection()) {
-            Statement stmt = connection.createStatement();
-            stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-            stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-            ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-
-            ArrayList<String> output = new ArrayList<String>();
-            while (rs.next()) {
-                output.add("Read from DB adnan: " + rs.getTimestamp("tick"));
-            }
-
-            model.put("records", output);
-            return "db";
-        } catch (Exception e) {
-            model.put("message", e.getMessage());
-            return "error";
-        }
-    }
-
-    @RequestMapping("/organizations")
-    @ResponseBody
-    String listOrganization() {
-            return "nothing";
-    }
 
 
 
