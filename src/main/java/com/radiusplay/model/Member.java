@@ -18,7 +18,6 @@ public class Member  extends AuditModel{
     @Temporal(TemporalType.TIMESTAMP)
     private Date memberSince;
 
-    @Enumerated(EnumType.STRING)
     @Column(length = 8)
-    private Enum<Rank> rank;
+    private String rank;
 }
