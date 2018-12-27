@@ -4,6 +4,7 @@ package com.radiusplay.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name = "organizations")
@@ -16,7 +17,7 @@ public class Organization  extends AuditModel{
     private String name;
     @Column
     @Temporal(TemporalType.TIMESTAMP)
-    private java.time.LocalDateTime registeredOn;
+    private Date registeredOn;
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;

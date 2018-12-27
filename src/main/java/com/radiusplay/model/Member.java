@@ -1,6 +1,7 @@
 package com.radiusplay.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "members")
@@ -15,7 +16,7 @@ public class Member  extends AuditModel{
 
     @Column
     @Temporal(TemporalType.TIMESTAMP)
-    private java.time.LocalDateTime memberSince;
+    private Date memberSince;
 
     @Enumerated(EnumType.STRING)
     private Enum<Rank> rank;
