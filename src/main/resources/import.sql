@@ -1,0 +1,1 @@
+INSERT INTO organizations (id, created_at, updated_at, name, registered_on) VALUES (1, '2018-12-27 05:39:40.204000', '2018-12-27 05:39:43.165000', 'acme', '2018-12-27 05:38:23.374000');
