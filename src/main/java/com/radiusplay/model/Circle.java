@@ -18,6 +18,7 @@ public class Circle extends AuditModel{
     @Column(unique = true)
     private String name;
 
+    @Transient
     private List<Member> members;
 
     @Column

@@ -22,7 +22,9 @@ public class Organization  extends AuditModel{
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
+    @Transient
     private java.util.List<User> users;
+    @Transient
     private java.util.List<Circle> circles;
 
 
