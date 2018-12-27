@@ -30,7 +30,7 @@ public class SwaggerConf {
                 "Api for managing and using Radiusplay Circles ",
                 "1.0",
                 "Terms of service",
-                new Contact("Adnna Rana", "www.radiusplay.com", "api@radiusplay.com"),
+                new Contact("Adnan Rana", "www.radiusplay.com", "api@radiusplay.com"),
                 "No License", "API license URL", Collections.emptyList());
     }
 }

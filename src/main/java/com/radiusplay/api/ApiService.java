@@ -1,5 +1,7 @@
 package com.radiusplay.api;
 
+import com.radiusplay.model.Organization;
+import com.radiusplay.repo.OrganizationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -19,6 +22,8 @@ import java.util.Map;
 public class ApiService {
     @Autowired
     private DataSource dataSource;
+    @Autowired
+    private OrganizationRepository organizationRepository;
 
     @GetMapping("/")
     String index() {
@@ -48,7 +53,8 @@ public class ApiService {
 
     @GetMapping("/organizations")
     @ResponseBody
-    String listOrganization() {
-        return "{'nothing':'100'}";
+    List<Organization> listOrganization() {
+        return organizationRepository.findAll();
+
     }
 }
