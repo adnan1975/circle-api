@@ -13,6 +13,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "circles")
+@Getter
+@Setter
 public class Circle extends AuditModel{
 
     @Id

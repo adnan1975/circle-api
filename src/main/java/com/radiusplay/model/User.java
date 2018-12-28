@@ -14,6 +14,8 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
+@Getter
+@Setter
 public class User  extends AuditModel{
 
     @NotNull

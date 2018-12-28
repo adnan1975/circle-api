@@ -13,7 +13,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "members")
-
+@Getter
+@Setter
 public class Member  extends AuditModel{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

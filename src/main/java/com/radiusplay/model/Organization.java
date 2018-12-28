@@ -13,6 +13,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "organizations")
+@Getter
+@Setter
 public class Organization  extends AuditModel{
 
     @NotNull
