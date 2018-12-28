@@ -2,13 +2,16 @@ package com.radiusplay.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @MappedSuperclass
@@ -17,6 +20,10 @@ import java.util.Date;
         value = {"createdAt", "updatedAt"},
         allowGetters = true
 )
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public abstract class AuditModel implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
